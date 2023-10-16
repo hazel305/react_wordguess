@@ -14,7 +14,12 @@ function App() {
       <p>Do you want to play game?</p>
 
       <div>
-        {isShown ?( <GameBoard secretword={secretWord} maxError={6} isShown={secretWord}/>):(<WordSelect setIsShown={true} WordSelected={val=>{setSecretWord(val); setIsShown(true)}}  />) }
+        {isShown ?( 
+        <GameBoard secretword={secretWord} maxError={6} isShown={secretWord}/>
+        ):(
+        <WordSelect setIsShown={true} WordSelected={val=>{setSecretWord(val);
+         setIsShown(true)}}  />
+         ) }
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 
-export default function ButtonGrid({secretword,guessedLetters,letterGuess,isShown}) {
+export default function ButtonGrid({secretword,guessedLetters,letterGuess,isShown,reset}) {
 
     let letters = [
         'A','B','C','D','E','F','G','H',
@@ -14,7 +14,7 @@ export default function ButtonGrid({secretword,guessedLetters,letterGuess,isShow
     
 
     let buttons = letters.map((letter, idx)=>{
-        return <Button value={letter} key={idx} onClick={letterGuess}/>  
+        return <Button reset={reset} value={letter} key={idx} onClick={letterGuess}/>  
     })
 
     //클래스 명에다  hidden 넣어주기 그러므로 공백이 필요
