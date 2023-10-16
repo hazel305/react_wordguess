@@ -22,7 +22,7 @@ export default function GameBoard({secretword,maxError,isShown}) {
  
 
   return (
-    <div className={isShown ? "":"hidden"}>
+    <div>
         <p>남은 횟수 : {maxError -errorCount}</p>
         <LetterGrid secretword={secretword} guessedLetters={guessedLetters}/>  
         <ButtonGrid letterGuess={letterGuessHandler} isShown={errorCount+1 > maxError}/>
