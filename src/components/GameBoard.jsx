@@ -32,7 +32,7 @@ export default function GameBoard({secretword,maxError,isShown}) {
             reset={reset}
          />
         {errorCount === maxError && 
-            <button onClick={()=>{
+            <button className='retry' onClick={()=>{
                 setErrorCount(0); 
                 setGuessedLetters([]); 
                 setReset(true)
