@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import LetterGrid from './LetterGrid'
 import ButtonGrid from './ButtonGrid'
 
-export default function GameBoard({secretword,maxError}) {
+export default function GameBoard({secretword,maxError,isShown}) {
     const [guessedLetters,setGuessedLetters] = useState([]);
     const [errorCount, setErrorCount] = useState(0);
 
@@ -16,14 +16,16 @@ export default function GameBoard({secretword,maxError}) {
            setErrorCount(errorCount+1)
         }
     }
+
+    
     
  
 
   return (
-    <div>
+    <div className={isShown ? "":"hidden"}>
         <p>남은 횟수 : {maxError -errorCount}</p>
         <LetterGrid secretword={secretword} guessedLetters={guessedLetters}/>  
-        <ButtonGrid letterGuess={letterGuessHandler} isShown={errorCount > maxError}/>
+        <ButtonGrid letterGuess={letterGuessHandler} isShown={errorCount+1 > maxError}/>
     </div>
     
   )
