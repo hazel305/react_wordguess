@@ -10,11 +10,13 @@ export default function WordSelect({WordSelected}) {
 
   const handleSubmit = (e)=>{
    e.preventDefault();
-   WordSelected(secret);
+   if(secret.trim() !== ""){
+     WordSelected(secret);
+  }
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" onChange={handleChange}></input>
+    <form onSubmit={handleSubmit} className='form'>
+      <input type="text" onChange={handleChange} placeholder='set a word'></input>
       <button>Set Word</button>
     </form>
   )
