@@ -1,13 +1,19 @@
-const LetterGrid = ({secretword})=>{
+import React from 'react';
+import Letter from './Letter';
+
+const LetterGrid = ({secretword, guessedLetters})=>{
     let lettered = secretword
                     .split('')
-                    .map((letter)=><span>{letter}</span>);
+                    .map((letter)=>{
+                    //letter가 guessedLetters와 같다면 true = 1, false = -1
+                    let isShown = guessedLetters.indexOf(letter.toLowerCase()) > -1;
+                    return(<Letter value={letter} isShown={isShown}/>);
+                });
   console.log(lettered);
+
     return (
         <>
-            <h3>LetterGrid</h3>
-            <p>{lettered}</p>
-            
+            <p>{lettered}</p>          
         </>
     )
 }

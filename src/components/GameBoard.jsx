@@ -4,7 +4,7 @@ import LetterGrid from './LetterGrid'
 export default function GameBoard({secretword}) {
   return (
     <>
-    <LetterGrid secretword={secretword}/>  
+    <LetterGrid secretword={secretword} guessedLetters={['r','e']}/>  
     </>
     
   )
