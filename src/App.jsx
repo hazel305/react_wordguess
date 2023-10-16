@@ -12,7 +12,7 @@ function App() {
       <p>Do you want to play game?</p>
 
       <div>
-        <GameBoard secretword="react"/>
+        <GameBoard secretword="react" maxError={6}/>
       </div>
     </div>
   );
