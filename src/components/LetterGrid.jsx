@@ -1,6 +1,7 @@
 import React from 'react';
 import Letter from './Letter';
 
+
 const LetterGrid = ({secretword, guessedLetters})=>{
     let letters = secretword
                     .split('')
@@ -12,9 +13,9 @@ const LetterGrid = ({secretword, guessedLetters})=>{
   console.log(letters);
 
     return (
-        <>
-            <p>{letters}</p>          
-        </>
+        <div className="letters">
+           {letters}   
+        </div>
     )
 }
 
